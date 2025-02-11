@@ -1,6 +1,8 @@
 #!/bin/ash
 
-echo "::debug::role_arn=$1"
+echo "::debug::role_arn=$INPUT_ROLE_ARN"
+
+
 
 # shellcheck disable=SC2046
 # shellcheck disable=SC2183
