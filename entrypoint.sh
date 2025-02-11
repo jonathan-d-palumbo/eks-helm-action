@@ -1,5 +1,6 @@
 #!/bin/ash
-echo "role_arn=$1" >> $GITHUB_OUTPUT
+
+echo "::debug::role_arn=$1"
 
 # shellcheck disable=SC2046
 # shellcheck disable=SC2183
