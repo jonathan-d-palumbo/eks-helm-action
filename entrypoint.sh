@@ -1,11 +1,11 @@
 #!/bin/ash
-echo $1
+echo "role_arn=$1" >> $GITHUB_OUTPUT
 
 # shellcheck disable=SC2046
 # shellcheck disable=SC2183
 export $(printf "AWS_ACCESS_KEY_ID=%s AWS_SECRET_ACCESS_KEY=%s AWS_SESSION_TOKEN=%s" \
 $(aws sts assume-role \
---role-arn $1 \
+--role-arn "$1" \
 --role-session-name MySessionName \
 --query "Credentials.[AccessKeyId,SecretAccessKey,SessionToken]" \
 --output text))
