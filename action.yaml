@@ -1,0 +1,15 @@
+name: helm-eks
+description: Installs/Upgrades helm charts
+inputs:
+  role_arn:
+    description: AWS Arn role to assume with access to the AWS eks cluster
+    required: true
+  eks_cluster_name:
+    description: The name of the AWS eks cluster where the charts will be installed or upgraded
+    required: true
+  manifest_file:
+    description: Manifest yaml files that contains details about the charts to be installed or upgraded (e.g. Chart name, version and values.yaml)
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
