@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk add --no-cache  \
     aws-cli \
-    helm \
+    helm
 
 COPY entrypoint.sh /entrypoint.sh
 
